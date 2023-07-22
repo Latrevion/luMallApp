@@ -6,8 +6,17 @@
 
 <script setup>
 
+
+import {onLoad} from '@dcloudio/uni-app'
+import {getHomeMutiData} from '@/service/home.js'
+
+onLoad(()=>{
+	getHomeMutiData().then((res)=>{
+		console.log('res',res.data.banner.list)
+	})
+})
 </script>
 
-<style>
+<style lang="scss">
 
 </style>
