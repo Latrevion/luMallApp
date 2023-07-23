@@ -1,19 +1,22 @@
 <template>
 	<view class="home">
-		home
+		{{banners}}
+		<hr>
+		{{recommends}}
 	</view>
 </template>
 
 <script setup>
 
-
 import {onLoad} from '@dcloudio/uni-app'
-import {getHomeMutiData} from '@/service/home.js'
+import {storeToRefs} from 'pinia'
+import {useHomeStore} from '@/store/home.js'
+
+const HomeStore = useHomeStore()
+const {banners,recommends} = storeToRefs(HomeStore)
 
 onLoad(()=>{
-	getHomeMutiData().then((res)=>{
-		console.log('res',res.data.banner.list)
-	})
+		HomeStore.fetchHomeMutilData()
 })
 </script>
 
