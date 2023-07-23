@@ -6,4 +6,12 @@ $gPriceColor:#ff5f3e;
 $gNormalColor: #666;
 
 $gBgColor:#f2f2f2;
+$gFontSize:28rpx;
 
+// 定义混合
+	  
+@mixin normalFlex($direction:row,$justify:space-between){
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+}

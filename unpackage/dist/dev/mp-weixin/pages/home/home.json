@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "home-banner": "./cpns/home-banner"
+    "home-banner": "./cpns/home-banner",
+    "home-recommend": "./cpns/home-recommend"
   }
 }

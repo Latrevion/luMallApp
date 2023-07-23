@@ -4,9 +4,10 @@ const store_home = require("../../store/home.js");
 require("../../service/home.js");
 require("../../service/index.js");
 if (!Math) {
-  HomeBanner();
+  (HomeBanner + HomeRecommend)();
 }
 const HomeBanner = () => "./cpns/home-banner.js";
+const HomeRecommend = () => "./cpns/home-recommend.js";
 const _sfc_main = {
   __name: "home",
   setup(__props) {
@@ -20,11 +21,20 @@ const _sfc_main = {
         url: "/pages/webview/webview?link=" + link
       });
     }
+    function itemClick(link) {
+      common_vendor.index.navigateTo({
+        url: "/pages/webview/webview?link=" + link
+      });
+    }
     return (_ctx, _cache) => {
       return {
         a: common_vendor.o(swiperItemClick),
         b: common_vendor.p({
           banners: common_vendor.unref(banners)
+        }),
+        c: common_vendor.o(itemClick),
+        d: common_vendor.p({
+          recommends: common_vendor.unref(recommends)
         })
       };
     };
