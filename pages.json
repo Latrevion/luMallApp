@@ -42,6 +42,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/webview/webview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
@@ -75,7 +84,7 @@
 				"pagePath": "pages/profile/profile",
 				"iconPath": "static/images/tabbar/profile.png",
 				"selectedIconPath": "static/images/tabbar/profile_active.png"
-			},
+			}
 		]
 	}
 }
