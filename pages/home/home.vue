@@ -6,6 +6,8 @@
 		<home-recommend :recommends='recommends' @itemClick='itemClick'></home-recommend>
 		<!-- 热门栏组件 -->
 		<home-popular></home-popular>
+		<!-- 选项卡组件 -->
+		<tab-control :titles="['流行','新款','精选']" @tabItemClick='tabItemClick'></tab-control>
 	</view>
 </template>
 
@@ -35,6 +37,10 @@ function itemClick(link){
 	uni.navigateTo({
 		url:'/pages/webview/webview?link='+link
 	})
+}
+
+function tabItemClick(index){
+	console.log(index);	
 }
 </script>
 

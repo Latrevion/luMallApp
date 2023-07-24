@@ -3,8 +3,13 @@ const common_vendor = require("../../common/vendor.js");
 const store_home = require("../../store/home.js");
 require("../../service/home.js");
 require("../../service/index.js");
+if (!Array) {
+  const _easycom_tab_control2 = common_vendor.resolveComponent("tab-control");
+  _easycom_tab_control2();
+}
+const _easycom_tab_control = () => "../../components/tab-control/tab-control.js";
 if (!Math) {
-  (HomeBanner + HomeRecommend + HomePopular)();
+  (HomeBanner + HomeRecommend + HomePopular + _easycom_tab_control)();
 }
 const HomeBanner = () => "./cpns/home-banner.js";
 const HomeRecommend = () => "./cpns/home-recommend.js";
@@ -27,6 +32,9 @@ const _sfc_main = {
         url: "/pages/webview/webview?link=" + link
       });
     }
+    function tabItemClick(index) {
+      console.log(index);
+    }
     return (_ctx, _cache) => {
       return {
         a: common_vendor.o(swiperItemClick),
@@ -36,6 +44,10 @@ const _sfc_main = {
         c: common_vendor.o(itemClick),
         d: common_vendor.p({
           recommends: common_vendor.unref(recommends)
+        }),
+        e: common_vendor.o(tabItemClick),
+        f: common_vendor.p({
+          titles: ["流行", "新款", "精选"]
         })
       };
     };
