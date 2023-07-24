@@ -4,10 +4,11 @@ const store_home = require("../../store/home.js");
 require("../../service/home.js");
 require("../../service/index.js");
 if (!Math) {
-  (HomeBanner + HomeRecommend)();
+  (HomeBanner + HomeRecommend + HomePopular)();
 }
 const HomeBanner = () => "./cpns/home-banner.js";
 const HomeRecommend = () => "./cpns/home-recommend.js";
+const HomePopular = () => "./cpns/home-popular.js";
 const _sfc_main = {
   __name: "home",
   setup(__props) {
